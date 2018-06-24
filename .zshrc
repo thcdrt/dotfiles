@@ -59,5 +59,15 @@ sourcenv () {
         fi
 }
 
+setUpKaamelottOtter() {
+    local misc_path=$HOME/misc
+    mkdir -p $misc_path
+    if [ ! -f $HOME/misc/otter.cow ]; then wget -qP $misc_path 'https://gist.githubusercontent.com/thcdrt/2022e0ccee7092f8839c0071575d5dd7/raw/8ddbde2ea4e4e0c9e4c250f3c2733d35f7822cd6/otter.cow'; fi
+    if [ ! -f $HOME/misc/kaamelott_quotes.json ]; then wget -qP $misc_path 'https://gist.githubusercontent.com/thcdrt/6c281882f71a96e413d2d5171bc60cb1/raw/53f0796de232d17ae0eb49cb5e4e33137a500af0/kaamelott_quotes.json'; fi
+}
+
+# Display an otter quoting a random famous Kaamelott character. Call setUpKaamelottOtter() once first.
+shuf -n1 $HOME/misc/kaamelott_quotes.json | cowsay -f $HOME/misc/otter.cow | lolcat
+
 # Source some personal alias
 [ -f ~/.myalias ] && source ~/.myalias
