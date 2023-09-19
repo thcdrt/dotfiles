@@ -2,7 +2,7 @@
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="ys"
 
-plugins=(git git-extras git-flow colored-man-pages colorize cp screen tmux ssh-agent knife)
+plugins=(git git-extras git-flow colored-man-pages colorize cp screen tmux ssh-agent knife z)
 source $ZSH/oh-my-zsh.sh
 
 COMPLETION_WAITING_DOTS="true"
